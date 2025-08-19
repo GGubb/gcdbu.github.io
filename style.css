@@ -56,25 +56,32 @@ header {
     position: relative;
 }
 
+.content {
+    background: #fff;        /* blanco */
+    color: #000;             /* texto oscuro para contraste */
+    padding: 100px 20px;     /* espacio interno */
+    min-height: 100vh;
+    text-align: center;       /* que ocupe al menos una pantalla completa */
+}
+
 .hero::after {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.35); /* más suave que el 0.55 */
+    background: rgba(0,0,0,0.35); /* overlay más suave */
+    z-index: 1; /* debajo del contenido */
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;  /* ahora relativo */
+    z-index: 2;          /* encima del overlay */
     text-align: center;
 }
 
 .hero-content h1 {
     font-size: 8rem;
     margin-bottom: 40px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* sombra para dar contraste */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8); /* sombra más marcada */
     color: #6bb4ff; /* azul principal */
 }
 
@@ -85,30 +92,27 @@ header {
 }
 
 .hero-content p strong {
-    color: #fff;           /* texto blanco */
-    font-weight: 900;      /* más grueso que "bold" */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* sombra para dar contraste */
-    padding: 2px 4px;      /* espacio interno para que no quede pegado */
-    border-radius: 4px;    /* bordes redondeados */
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    padding: 2px 4px;
+    border-radius: 4px;
 }
-
 
 /* Botón */
 .btn {
     padding: 12px 40px;
-    background: #6bb4ff;
-    color: white;
+    background: #2196f3;  /* azul más vibrante */
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 0; /* recto */
+    border-radius: 4px;
     transition: background 0.4s;
-
-    /* separación del texto */
-    margin-top: 40px;   /* agrega espacio arriba */
-    display: inline-block; /* asegura que el margen funcione bien */
+    margin-top: 40px;
+    display: inline-block;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.4); /* da vida */
 }
 
-
 .btn:hover {
-    background: #4a94d6;
+    background: #1976d2; /* tono más oscuro al pasar el mouse */
 }
