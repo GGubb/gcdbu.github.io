@@ -16,29 +16,28 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(6px);
+    background: #000; /* negro sólido */
     padding: 15px 50px;
     z-index: 1000;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* alinea a la derecha */
     align-items: center;
 }
-
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #fff;
-    font-weight: 500;
+    font-weight: bold;   /* negrita */
+    text-transform: uppercase; /* mayúsculas */
     transition: color 0.3s;
 }
 
@@ -46,7 +45,7 @@ header {
     color: #6bb4ff;
 }
 
-/* Sección principal */
+/* Hero section */
 .hero {
     height: 100vh;
     background: url("assets/background.jpg") no-repeat center center/cover;
@@ -61,7 +60,7 @@ header {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.55); /* oscurece la imagen */
+    background: rgba(0,0,0,0.35); /* más suave que el 0.55 */
 }
 
 .hero-content {
@@ -72,9 +71,9 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 15px;
-    color: #fff;
+    color: #6bb4ff; /* azul principal */
 }
 
 .hero-content p {
@@ -83,14 +82,19 @@ header {
     color: #ddd;
 }
 
+.hero-content p strong {
+    color: #fff; /* para "ART STATUS:" en blanco */
+    font-weight: bold;
+}
+
 /* Botón */
 .btn {
-    padding: 12px 30px;
+    padding: 12px 40px;
     background: #6bb4ff;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0; /* recto */
     transition: background 0.3s;
 }
 
