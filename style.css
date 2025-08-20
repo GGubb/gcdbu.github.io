@@ -5,10 +5,20 @@
     box-sizing: border-box;
 }
 
+/* Bloquear scroll vertical y suavizar navegación */
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* bloquea scroll */
+}
+
+html {
+    scroll-behavior: smooth; /* transición suave al navegar con los botones */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    color: white;
-    background-color: #111;
+    color: #f9f9f9;
+    background-color: #1e2a36; /* gris azulado oscuro */
 }
 
 /* Barra de navegación */
@@ -16,14 +26,15 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #000; /* negro sólido */
+    background: rgba(30, 42, 54, 0.95); /* transparente elegante */
     padding: 15px 50px;
     z-index: 1000;
+    backdrop-filter: blur(6px); /* efecto moderno */
 }
 
 .navbar {
     display: flex;
-    justify-content: flex-end; /* alinea a la derecha */
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -35,14 +46,14 @@ header {
 
 .nav-links li a {
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;   /* negrita */
-    text-transform: uppercase; /* mayúsculas */
+    color: #f9f9f9;
+    font-weight: bold;
+    text-transform: uppercase;
     transition: color 0.3s;
 }
 
 .nav-links li a:hover {
-    color: #6bb4ff;
+    color:#fdd37a; /* azul cielo */
 }
 
 /* Hero section */
@@ -56,63 +67,335 @@ header {
     position: relative;
 }
 
-.content {
-    background: #fff;        /* blanco */
-    color: #000;             /* texto oscuro para contraste */
-    padding: 100px 20px;     /* espacio interno */
-    min-height: 100vh;
-    text-align: center;       /* que ocupe al menos una pantalla completa */
-}
-
 .hero::after {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.35); /* overlay más suave */
-    z-index: 1; /* debajo del contenido */
+    background: rgba(30,42,54,0.55); /* overlay más integrado */
+    z-index: 1;
 }
 
 .hero-content {
-    position: relative;  /* ahora relativo */
-    z-index: 2;          /* encima del overlay */
+    position: relative;
+    z-index: 2;
     text-align: center;
 }
 
 .hero-content h1 {
     font-size: 8rem;
     margin-bottom: 40px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.8); /* sombra más marcada */
-    color: #6bb4ff; /* azul principal */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    color: #fdd37a; /* azul principal */
 }
 
 .hero-content p {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: #ddd;
+    color: #e2e2e2;
 }
 
 .hero-content p strong {
-    color: #fff;
+    color: #fdd37a; /* amarillo cálido de acento */
     font-weight: 900;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-    padding: 2px 4px;
-    border-radius: 4px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    padding: 2px 6px;
+    border-radius: 6px;
 }
+
+/* seccion .content*/
+
+.content {
+    background: #f9f9f9;
+    color: #1e2a36;
+    padding: 100px 50px;
+    min-height: 100vh; /* cada sección ocupa toda la pantalla */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about {
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 50px; 
+    margin-top: -100px;   
+    color: #1e2a36;
+    font-weight: 700;
+    position: relative;
+}
+
+.about-text h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #fdd37a;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px; /* agrega espacio entre párrafos */
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+}
+
 
 /* Botón */
 .btn {
     padding: 12px 40px;
-    background: #2196f3;  /* azul más vibrante */
+    background: linear-gradient(135deg, #6bb4ff, #6fc2b0); 
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 4px;
-    transition: background 0.4s;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-top: 40px;
     display: inline-block;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.4); /* da vida */
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.35);
 }
 
 .btn:hover {
-    background: #1976d2; /* tono más oscuro al pasar el mouse */
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.45);
+}
+
+/* Mostrar/ocultar secciones */
+.page {
+  display: none;   /* todas ocultas por defecto */
+}
+
+#inicio {
+  display: block;  /* inicio siempre visible con scroll */
+}
+
+.page.active {
+  display: block;  /* la sección activa se muestra cuando se clickea */
+}
+
+
+/* --- Sección Precios --- */
+.prices-container {
+  padding: 100px 50px;
+  background: #f9f9f9;
+  color: #1e2a36;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.prices-container h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #1e2a36;
+  position: relative;
+}
+
+.price-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-8px);
+}
+
+.price-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1e2a36;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fdd37a;
+  margin-bottom: 20px;
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.price-card ul li {
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* --- Sección Galería --- */
+.gallery-container {
+  padding: 100px 50px;
+  background: #f9f9f9;
+  color: #1e2a36;
+  min-height: 100vh;
+}
+
+.gallery-container h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1e2a36;
+}
+
+.carousel-block {
+  margin-bottom: 60px;
+}
+
+.carousel-block h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fdd37a;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* scroll horizontal */
+  padding-bottom: 10px;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  height: 8px; /* grosor del scroll */
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.carousel img {
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+  flex-shrink: 0; /* no se reduce */
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Sección Términos y Condiciones --- */
+.terms-container {
+  padding: 100px 50px;
+  background: #f9f9f9;
+  color: #1e2a36;
+  min-height: 100vh;
+}
+
+.terms-container h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1e2a36;
+}
+
+.terms-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+  max-height: 500px; /* por si hay mucho texto */
+  overflow-y: auto; /* agrega scroll interno */
+}
+
+.terms-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terms-box::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* --- Sección Contacto --- */
+.contact-container {
+  padding: 100px 50px;
+  background: #f9f9f9;
+  color: #1e2a36;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #1e2a36;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+  font-size: 1.2rem;
+  color: #333;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  justify-content: flex-start;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
 }

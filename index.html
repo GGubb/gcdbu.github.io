@@ -1,41 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NaviByhishu</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaviByhishu</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <header>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Precios</a></li>
-                <li><a href="#">Galería</a></li>
-                <li><a href="#">Términos</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#" data-section="inicio">Inicio</a></li>
+        <li><a href="#" data-section="precios">Precios</a></li>
+        <li><a href="#" data-section="galeria">Galería</a></li>
+        <li><a href="#" data-section="terminos">Términos</a></li>
+        <li><a href="#" data-section="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Sección principal con fondo -->
-    <body>
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>NaviByhishu</h1>
-            <p><strong>Estado del Artista:</strong></p>
-            <p>Comisiones Abiertas</p>
-            <a href="#" class="btn">Precios</a>
+  <!-- INICIO -->
+  <section id="inicio" class="page active">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>NaviByhishu</h1>
+        <p><strong>Estado del Artista:</strong></p>
+        <p>Comisiones Abiertas</p>
+        <a href="#" class="btn" data-section="precios">Precios</a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="about" id="sobre mi">
+        <div class="about-text">
+          <h2>Sobre mí</h2>
+          <p>
+            Soy NaviByhishu un artista Chileno tratanto de ganarme la vida, en esta página podrás ver mis 
+            precios, otras comisiones tanto NSFW como SFW.
+          </p>
+          <p>Espero que encuentren lo que necesitan y si pueden pasen por mis redes sociales, me ayuda caleta :D</p>
+        </div>
+        <div class="about-image">
+          <img src="assets/navi.jpg" alt="NaviByhishu">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÁGINAS OCULTAS -->
+  <section id="precios" class="page">
+  <div class="prices-container">
+    <h2>Precios</h2>
+    <div class="price-cards">
+      <div class="price-card">
+        <h3>Boceto</h3>
+        <p class="price">$10 USD</p>
+        <ul>
+          <li>Lineart simple</li>
+          <li>Sin color</li>
+          <li>Entrega rápida</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Ilustración Básica</h3>
+        <p class="price">$25 USD</p>
+        <ul>
+          <li>Color plano</li>
+          <li>1 personaje</li>
+          <li>Fondo simple</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Ilustración Detallada</h3>
+        <p class="price">$50 USD</p>
+        <ul>
+          <li>Sombras y luces</li>
+          <li>Hasta 2 personajes</li>
+          <li>Fondo trabajado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="galeria" class="page">
+  <div class="gallery-container">
+    <h2>Mis Trabajos</h2>
+
+    <!-- Carrusel SFW -->
+    <div class="carousel-block">
+      <h3>SFW</h3>
+      <div class="carousel">
+        <img src="assets/sfw1.jpg" alt="Trabajo SFW 1">
+        <img src="assets/sfw2.jpg" alt="Trabajo SFW 2">
+        <img src="assets/sfw3.jpg" alt="Trabajo SFW 3">
+      </div>
+    </div>
+
+    <!-- Carrusel NSFW -->
+    <div class="carousel-block">
+      <h3>NSFW</h3>
+      <div class="carousel">
+        <img src="assets/nsfw1.jpg" alt="Trabajo NSFW 1">
+        <img src="assets/nsfw2.jpg" alt="Trabajo NSFW 2">
+        <img src="assets/nsfw3.jpg" alt="Trabajo NSFW 3">
+        <img src="assets/nsfw4.jpg" alt="Trabajo NSFW 4">
+      </div>
+    </div>
+
+  </div>
+ </section>
+
+    <section id="terminos" class="page">
+        <div class="terms-container">
+            <h2>Términos y Condiciones</h2>
+            <div class="terms-box">
+            <p>
+                Aquí puedes escribir los términos y condiciones de tus comisiones.  
+                Por ejemplo:  
+                - No se permiten devoluciones una vez iniciado el trabajo.  
+                - El cliente debe dar referencias claras antes de comenzar.  
+                - El tiempo de entrega puede variar según la complejidad.  
+                - El uso comercial debe ser discutido previamente.  
+                (Agrega o edita todo lo que necesites aquí).
+            </p>
+            </div>
         </div>
     </section>
 
-    <!-- Contenido después del hero -->
-    <section class="content">
-        <h2>Sobre mí</h2>
-        <p>son todos putos</p>
+    <section id="contacto" class="page">
+        <div class="contact-container">
+            <h2>Redes</h2>
+            <div class="contact-list">
+
+            <!-- Gmail -->
+            <div class="contact-item">
+                <img src="assets/gmail.png" alt="Gmail">
+                <span>email@gmail.com</span>
+            </div>
+
+            <!-- Instagram -->
+            <div class="contact-item">
+                <img src="assets/instagram.png" alt="Instagram">
+                <span>@navibyhishu</span>
+            </div>
+
+            <!-- Twitter -->
+            <div class="contact-item">
+                <img src="assets/twitter.png" alt="Twitter">
+                <span>@usuario</span>
+            </div>
+
+            
+            </div>
+        </div>
     </section>
+
+  <script src="main.js"></script>
 </body>
 </html>
