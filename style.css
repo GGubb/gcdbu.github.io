@@ -262,7 +262,7 @@ header {
 /* --- Sección Galería --- */
 .gallery-container {
   padding: 100px 50px;
-  background: #f9f9f9;
+  background: #f9f9f9; /* fondo blanco */
   color: #1e2a36;
   min-height: 100vh;
 }
@@ -282,18 +282,33 @@ header {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #fdd37a;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
 }
 
+/* Contenedor del carrusel con flechas */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(144, 238, 144, 0.4); /* verde pastel semitransparente */
+  border-radius: 12px;
+}
+
+/* Carrusel de imágenes */
 .carousel {
   display: flex;
   gap: 20px;
-  overflow-x: auto; /* scroll horizontal */
-  padding-bottom: 10px;
-  scrollbar-width: thin; /* Firefox */
+  overflow-x: auto; 
+  scroll-behavior: smooth; /* desplazamiento suave */
+  width: 100%;
+  padding: 10px 0;
 }
 
+/* Scroll personalizado */
 .carousel::-webkit-scrollbar {
-  height: 8px; /* grosor del scroll */
+  height: 8px;
 }
 
 .carousel::-webkit-scrollbar-thumb {
@@ -301,17 +316,55 @@ header {
   border-radius: 10px;
 }
 
+/* Imágenes del carrusel */
 .carousel img {
-  height: 200px;
+  height: 400px;
   border-radius: 12px;
   box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
-  flex-shrink: 0; /* no se reduce */
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
 .carousel img:hover {
   transform: scale(1.05);
 }
+
+/* Botones de navegación */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30, 42, 54, 0.6);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s;
+  line-height: 1; 
+}
+
+.carousel-btn:hover {
+  background: rgba(30, 42, 54, 0.9);
+}
+
+.carousel-btn.prev {
+  left: 10px;  /* flecha izquierda */
+  
+}
+
+.carousel-btn.next {
+  right: 10px; /* flecha derecha */
+}
+
 
 /* --- Sección Términos y Condiciones --- */
 .terms-container {
@@ -354,8 +407,7 @@ header {
 /* --- Sección Contacto --- */
 .contact-container {
   padding: 100px 50px;
-  background: #f9f9f9;
-  color: #1e2a36;
+  background: rgb(255, 255, 255);
   min-height: 100vh;
   text-align: center;
 }
@@ -363,7 +415,8 @@ header {
 .contact-container h2 {
   font-size: 3rem;
   margin-bottom: 50px;
-  color: #1e2a36;
+  color: #fdd37a; /* amarillo */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
 .contact-list {
@@ -377,20 +430,22 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #fff;
+  background: #fff; /* botones blancos */
   padding: 15px 25px;
   border-radius: 12px;
   box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
   font-size: 1.2rem;
-  color: #333;
-  transition: transform 0.3s ease;
+  color: #1e2a36; /* texto oscuro */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 400px;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 .contact-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0px 8px 22px rgba(0,0,0,0.25);
 }
 
 .contact-item img {
@@ -398,4 +453,73 @@ header {
   height: 40px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.contact-item img.ychart {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* ----- Modal para ampliar imágenes ----- */
+.modal {
+  display: flex;  /* siempre flex */
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+
+  opacity: 0;        /* oculto por defecto */
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {        /* cuando lo abras con JS */
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.8);
+  animation: zoom 0.3s ease;
+}
+
+
+/* Texto opcional debajo de la imagen */
+#caption {
+  margin: 15px;
+  color: #f1f1f1;
+  font-size: 1.2rem;
+}
+
+/* Botón cerrar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #fdd37a;
+}
+
+/* Animación de zoom */
+@keyframes zoom {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
 }

@@ -83,34 +83,78 @@
   </div>
 </section>
 
+    <section id="galeria" class="page">
+        <div class="gallery-container">
+            <h2>Mis Trabajos</h2>
 
-  <section id="galeria" class="page">
-  <div class="gallery-container">
-    <h2>Mis Trabajos</h2>
+            <!-- Carrusel SFW -->
+            <div class="carousel-block">
+            <h3>SFW</h3>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev">&#10094;</button>
+                <div class="carousel">
+                    <img src="assets/sfw1.jpg" >
+                    <img src="assets/sfw2.jpg" >
+                    <img src="assets/sfw3.jpg" >
+                    <img src="assets/sfw4.png" >
+                    <img src="assets/sfw5.jpg" >
+                    <img src="assets/sfw6.jpg" >
+                    <img src="assets/sfw7.jpg" >
+                    <img src="assets/sfw8.png" >
+                    <img src="assets/sfw9.jpg" >
+                    <img src="assets/sfw10.jpg" >
+                    <img src="assets/sfw11.jpg" >
+                    <img src="assets/sfw12.jpg" >
+                    <img src="assets/sfw13.png" >
+                    <img src="assets/sfw14.jpg" >
+                    <img src="assets/sfw15.jpg" >
+                    <img src="assets/sfw16.png" >
+                    <img src="assets/sfw17.jpg" >
+                    <img src="assets/sfw18.png" >
+                    <img src="assets/sfw19.jpg" >
+                    <img src="assets/sfw20.jpg" >
+                    <img src="assets/sfw21.png" >
+                    <img src="assets/sfw22.jpg" >
+                </div>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            </div>
 
-    <!-- Carrusel SFW -->
-    <div class="carousel-block">
-      <h3>SFW</h3>
-      <div class="carousel">
-        <img src="assets/sfw1.jpg" alt="Trabajo SFW 1">
-        <img src="assets/sfw2.jpg" alt="Trabajo SFW 2">
-        <img src="assets/sfw3.jpg" alt="Trabajo SFW 3">
-      </div>
-    </div>
+            <!-- Carrusel NSFW -->
+            <div class="carousel-block">
+            <h3>NSFW</h3>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev">&#10094;</button>
+                <div class="carousel">
+                    <img src="assets/nsfw1.jpg" >
+                    <img src="assets/nsfw2.jpg" >
+                    <img src="assets/nsfw3.jpg" >
+                    <img src="assets/nsfw4.jpg" >
+                    <img src="assets/nsfw5.gif" >
+                    <img src="assets/nsfw6.gif" >
+                    <img src="assets/nsfw7.gif" >
+                    <img src="assets/nsfw8.gif" >
+                    <img src="assets/nsfw9.gif" >
+                    <img src="assets/nsfw10.gif">
+                    
+                </div>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            </div>
 
-    <!-- Carrusel NSFW -->
-    <div class="carousel-block">
-      <h3>NSFW</h3>
-      <div class="carousel">
-        <img src="assets/nsfw1.jpg" alt="Trabajo NSFW 1">
-        <img src="assets/nsfw2.jpg" alt="Trabajo NSFW 2">
-        <img src="assets/nsfw3.jpg" alt="Trabajo NSFW 3">
-        <img src="assets/nsfw4.jpg" alt="Trabajo NSFW 4">
-      </div>
-    </div>
-
-  </div>
- </section>
+            <!-- Carrusel NSFW -->
+            <!-- <div class="carousel-block">
+            <h3>Videos</h3>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <video width="1280" height="720" controls autoplay muted>
+                        <source src = "assets/video.mp4" alt = "Videos" >
+                    </video>
+                </div>
+            </div>
+            </div> -->
+        </div>
+    </section>
 
     <section id="terminos" class="page">
         <div class="terms-container">
@@ -134,29 +178,51 @@
             <h2>Redes</h2>
             <div class="contact-list">
 
-            <!-- Gmail -->
-            <div class="contact-item">
-                <img src="assets/gmail.png" alt="Gmail">
-                <span>email@gmail.com</span>
-            </div>
+            <!-- Furraffinity -->
+            <a href="https://www.furaffinity.net/user/nikkypieart" target="_blank" class="contact-item">
+              <img src="assets/furraffinity.png" alt="Furraffinity">
+              <span>~nikkypieart</span>
+            </a>
 
             <!-- Instagram -->
-            <div class="contact-item">
+            <!-- <div class="contact-item">
                 <img src="assets/instagram.png" alt="Instagram">
                 <span>@navibyhishu</span>
-            </div>
+            </div> -->
 
             <!-- Twitter -->
-            <div class="contact-item">
-                <img src="assets/twitter.png" alt="Twitter">
-                <span>@usuario</span>
-            </div>
+            <a href="https://x.com/nikky_pie" target="_blank" class="contact-item">
+              <img src="assets/twitter.png" alt="Twitter">
+              <span>@Nikky_Pie</span>
+            </a>
 
+            <!-- Discord -->
+            <a href="https://discord.com/users/nikky_pie" target="_blank" class="contact-item">
+              <img src="assets/discord.png" alt="Discord">
+              <span>#nikky_pie</span>
+            </a>
+
+            <!-- ych.art -->
+            <a href="https://ych.art/user/nikky_pie/auctions" target="_blank" class="contact-item">
+              <img src="assets/ychart.png" alt="Ych!art" class="ychart">
+              <span>#Nikky_Pie</span>
+            </a>
+
+            <!-- Gmail -->
+            <!-- <div class="contact-item">
+                <img src="assets/gmail.png" alt="Gmail">
+                <span>email@gmail.com</span>
+            </div> -->
             
             </div>
         </div>
     </section>
-
+  <!-- Modal para ver imagen ampliada -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
